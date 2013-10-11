@@ -1,4 +1,6 @@
 from piece_color import WHITE, BLACK
+from View.Console.Piece.piece_view import PieceView
+
 from kao_gui.console.console_widget import ConsoleWidget
 
 class TileView(ConsoleWidget):
@@ -12,7 +14,13 @@ class TileView(ConsoleWidget):
         
     def draw(self):
         """ Draw the Widget """
-        return self.formatTerminalString(self.getBackgroundColor() + " " + "{t.normal}")
+        if self.tile.piece is not None:
+            pieceView = PieceView(self.tile.piece)
+            pieceViewString = pieceView.draw()
+        else:
+            pieceViewString = " "
+            
+        return self.formatTerminalString(self.getBackgroundColor() + pieceViewString + "{t.normal}")
         
     def getBackgroundColor(self):
         """ Return the background color for the tile """
