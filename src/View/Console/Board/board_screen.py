@@ -2,6 +2,8 @@ from View.Console.Board.tile_view import TileView
 
 from kao_gui.console.console_widget import ConsoleWidget
 
+from string import ascii_lowercase
+
 class BoardScreen(ConsoleWidget):
     """ Represents the view for a Chess Board """
     
@@ -17,7 +19,7 @@ class BoardScreen(ConsoleWidget):
         
     def draw(self):
         """ Draw the Widget """
-        print " abcdefgh\r"
+        print " {0}\r".format(ascii_lowercase[:self.board.size])
         
         i = 1
         for row in self.tileViews:
