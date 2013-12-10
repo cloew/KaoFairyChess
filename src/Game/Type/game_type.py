@@ -4,4 +4,9 @@ class GameType:
     
     def __init__(self):
         """ Initialize the Game Type """
-        self.numberOfPlayers = 2
+        self.playerPreparers = []
+        
+    @property
+    def numberOfPlayers(self):
+        """ Return the Number of Players this game type supports """
+        return len(self.playerPreparers)
