@@ -4,6 +4,6 @@ class PlayerPreparer:
     
     def __init__(self):
         """ Initialize the Player Preparer """
-        self.playerOnTop = False
         
-    
+    def prepare(self, player, board):
+        """ Prepare the given player with the given board """
