@@ -11,7 +11,9 @@ class BoardScreen(ConsoleWidget):
         """ Initialize the board view """
         self.board = board
         self.tileViews = []
-        for row in board.tiles:
+        tiles = list(board.tiles)
+        tiles.reverse()
+        for row in tiles:
             tileViewsInRow = []
             for tile in row:
                 tileViewsInRow.append(TileView(tile))
@@ -21,10 +23,10 @@ class BoardScreen(ConsoleWidget):
         """ Draw the Widget """
         print " {0}\r".format(ascii_lowercase[:self.board.size])
         
-        i = 1
+        i = 8
         for row in self.tileViews:
             line = ""
             for tileView in row:
                 line += tileView.draw()
             print str(i)+line + "\r"
-            i += 1
+            i -= 1
