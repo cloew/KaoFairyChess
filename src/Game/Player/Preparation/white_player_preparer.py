@@ -10,5 +10,6 @@ class WhitePlayerPreparer(PlayerPreparer):
     
     def prepare(self, player, board):
         """ Prepare the given player with the given board """
-        pawn = self.getPieceOnBoard(board, 0, 0, 'P')
-        player.piecesOnBoard.append(pawn)
+        for column in range(board.size):
+            pawn = self.getPieceOnBoard(board, 1, column, 'P')
+            player.piecesOnBoard.append(pawn)
