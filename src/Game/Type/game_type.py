@@ -1,7 +1,7 @@
 from Game.Player.player import Player
 
-from Game.Player.black_player_preparer import BlackPlayerPreparer
-from Game.Player.white_player_preparer import WhitePlayerPreparer
+from Game.Player.Preparation.black_player_preparer import BlackPlayerPreparer
+from Game.Player.Preparation.white_player_preparer import WhitePlayerPreparer
 
 class GameType:
     """ Represents a Chess Game Type """
