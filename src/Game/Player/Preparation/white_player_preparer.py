@@ -1,5 +1,5 @@
 from piece_color import WHITE, BLACK
-from Game.Player.player_preparer import PlayerPreparer
+from Game.Player.Preparation.player_preparer import PlayerPreparer
 
 class WhitePlayerPreparer(PlayerPreparer):
     """ Represents the Preparer for the White Player in a standard Game of Chess """

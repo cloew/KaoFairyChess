@@ -28,3 +28,7 @@ class Board:
                 return WHITE
             else:
                 return BLACK
+                
+    def __getitem__(self, index):
+        """ Return the row requested """
+        return self.tiles[index]

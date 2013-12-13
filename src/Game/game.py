@@ -1,5 +1,5 @@
 from Board.board import Board
-from Game.game_type import GameType
+from Game.Type.game_type import GameType
 
 class Game:
     """ Represents a Game of Chess """
