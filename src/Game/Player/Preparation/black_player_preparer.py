@@ -10,3 +10,5 @@ class BlackPlayerPreparer(PlayerPreparer):
     
     def prepare(self, player, board):
         """ Prepare the given player with the given board """
+        pawn = self.getPieceOnBoard(board, board.last_row, board.last_col, 'P')
+        player.piecesOnBoard.append(pawn)

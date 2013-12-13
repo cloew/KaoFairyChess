@@ -28,6 +28,16 @@ class Board:
                 return WHITE
             else:
                 return BLACK
+        
+    @property
+    def last_row(self):
+        """ Return the last Row index of the board """
+        return self.size-1
+        
+    @property
+    def last_col(self):
+        """ Return the last Column index of the board """
+        return self.size-1
                 
     def __getitem__(self, index):
         """ Return the row requested """
