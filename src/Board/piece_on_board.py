@@ -6,3 +6,4 @@ class PieceOnBoard:
         """ Initialize the Piece on the Board """
         self.piece = piece
         self.tile = tile
+        self.tile.piece = self.piece
