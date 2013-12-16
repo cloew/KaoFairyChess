@@ -7,4 +7,5 @@ class TileLocator:
         
     def locateTiles(self, startingTile, board):
         """ Locate and return all potential tiles based on the location algorithm """
+        
         return []

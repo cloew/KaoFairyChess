@@ -13,8 +13,15 @@ class Board:
         for i in range(self.size):
             row = []
             for j in range(self.size):
-                row.append(Tile(self.getColorForSquare(i,j)))
+                row.append(Tile(self.getColorForSquare(i,j), i, j))
             self.tiles.append(row)
+            
+    def getTileAt(self, row, column):
+        """ Returns the tile at the coordinate given or None """
+        if row in range(self.size) and column in range(self.size):
+            return self.tiles[row][column]
+        else:
+            return None
             
     def getColorForSquare(self, row, column):
         """ Return the color for the given square """
