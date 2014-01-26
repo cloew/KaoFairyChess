@@ -16,6 +16,7 @@ class GameType:
         for preparer in self.playerPreparers:
             player = Player()
             preparer.prepare(player, board)
+            players.append(player)
         
         return players
         

@@ -6,6 +6,7 @@ class Game:
     
     def __init__(self):
         """ Initialize the Game """
+        self.over = False
         self.board = Board()
         gameType = GameType()
         self.players = gameType.getPlayersForGame(self.board)
