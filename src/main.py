@@ -1,5 +1,5 @@
 from Game.game import Game
-from View.Console.Board.board_controller import BoardController
+from View.Console.Game.game_controller import GameController
 
 from kao_gui.console.window import Window
 
@@ -9,7 +9,7 @@ def main(args):
     """ Run the main file """
     with Window.window():
         game = Game()
-        controller = BoardController(game.board)
+        controller = GameController(game)
         controller.run()
 
 if __name__ == "__main__":
