@@ -8,5 +8,5 @@ class PlayerTurnController(ConsoleController):
     
     def __init__(self, player, game):
         """ Initialize the Player Turn Controller """
-        screen = PlayerTurnScreen()
+        screen = PlayerTurnScreen(player, game.board)
         ConsoleController.__init__(self, screen)
