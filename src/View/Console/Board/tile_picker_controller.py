@@ -1,4 +1,5 @@
 from tile_picker_screen import TilePickerScreen
+from Board.tile_picker import TilePicker
 
 from kao_console.ascii import ENDL
 from kao_gui.console.console_controller import ConsoleController
@@ -11,7 +12,8 @@ class TilePickerController(ConsoleController):
     def __init__(self, player, game):
         """ Initialize the Tile Picker Controller """
         self.board = game.board
-        screen = TilePickerScreen(player, game.board)
+        self.tilePicker = TilePicker(game.board)
+        screen = TilePickerScreen(player, self.tilePicker)
         commands = {}
         for character in digits:
             commands[character] = screen.tilePickerWidget.setRow
@@ -20,15 +22,13 @@ class TilePickerController(ConsoleController):
             commands[character] = screen.tilePickerWidget.setColumn
         ConsoleController.__init__(self, screen, commands=commands)
         
-    def getTile(self):
-        """ Return the selected tile """
-        row = self.getIndex(self.screen.rowText, digits)
-        column = self.getIndex(self.screen.columnText, ascii_lowercase)
+    def setRow(self, event):
+        """ Set the current row """
+        self.tilePicker.row = self.getIndex(event, digits)-1
         
-        if row is None or column is None:
-            return None
-        
-        return self.board.getTileAt(row, column)
+    def setColumn(self, event):
+        """ Set the current column """
+        self.tilePicker.column = self.getIndex(event, ascii_lowercase)
             
     def getIndex(self, text, listString):
         """ Return the index of text in the given list """

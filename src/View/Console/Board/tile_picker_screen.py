@@ -6,11 +6,11 @@ from kao_gui.console.console_widget import ConsoleWidget
 class TilePickerScreen(ConsoleWidget):
     """ Represents the screen for Tile Picking """
     
-    def __init__(self, player, board):
+    def __init__(self, player, tilePicker):
         """ Initialize the view """
         self.player = player
-        self.boardWidget = BoardWidget(board)
-        self.tilePickerWidget = TilePickerWidget()
+        self.boardWidget = BoardWidget(tilePicker.board)
+        self.tilePickerWidget = TilePickerWidget(tilePicker)
         
     def draw(self):
         """ Draw the Widget """
