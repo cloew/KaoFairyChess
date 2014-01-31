@@ -15,12 +15,6 @@ class GameController(ConsoleController):
         
     def nextMessage(self, event):
         """ Tell the screen to print the next message """
-        if self.game.over:
-            self.stopRunning()
-        else:
+        while not self.game.over:
             self.runController(RoundController(self.game))
-            
-            if self.game.over:
-                self.screen.message = "{0} Won!".format(self.game.winningPlayer)
-            else:
-                self.screen.message = "Round Complete!\r\nGet Ready for the next one!"
+        self.stopRunning()

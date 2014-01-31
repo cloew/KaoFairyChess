@@ -10,28 +10,17 @@ class RoundController(ConsoleController):
     def __init__(self, game):
         """ Initialize the Round Controller """
         self.game = game
-        screen = RoundScreen()
-        ConsoleController.__init__(self, screen, commands={ENDL:self.performATurn})
+        ConsoleController.__init__(self, None)
         
-        self.performPlayerTurn = self.performPlayerTurn()
-        self.performPlayerTurn.next()
+    def run(self):
+        """ Run a single round of the chess game """
+        self.running = True
         
-    def performATurn(self, event):
-        """ Perform a single Player's Turn """
-        self.performPlayerTurn.next()
-        
-    def performPlayerTurn(self):
-        """ Perfrom a player's turn """
-        i = 0
-        while True:
-            for player in self.game.players:
-                self.screen.currentPlayer = player
-                yield
-                self.runPlayerTurn(player)
-                
-                if self.game.over:
-                    self.stopRunning()
-                i += 1
+        for player in self.game.players:
+            self.runPlayerTurn(player)
+            print 'Finished running the first player'
+            if self.game.over:
+                return
                 
     def runPlayerTurn(self, player):
         """ Run the Player's Turn """
