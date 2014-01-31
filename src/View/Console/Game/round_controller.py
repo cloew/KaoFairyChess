@@ -1,7 +1,5 @@
 from View.Console.Game.player_turn_controller import PlayerTurnController
-from View.Console.Game.round_screen import RoundScreen
 
-from kao_console.ascii import ENDL
 from kao_gui.console.console_controller import ConsoleController
 
 class RoundController(ConsoleController):
@@ -18,7 +16,6 @@ class RoundController(ConsoleController):
         
         for player in self.game.players:
             self.runPlayerTurn(player)
-            print 'Finished running the first player'
             if self.game.over:
                 return
                 

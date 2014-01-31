@@ -3,8 +3,8 @@ from View.Console.Board.tile_picker_widget import TilePickerWidget
 
 from kao_gui.console.console_widget import ConsoleWidget
 
-class PlayerTurnScreen(ConsoleWidget):
-    """ Represents the view for a *** """
+class TilePickerScreen(ConsoleWidget):
+    """ Represents the screen for Tile Picking """
     
     def __init__(self, player, board):
         """ Initialize the view """
